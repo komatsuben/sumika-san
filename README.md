@@ -15,4 +15,5 @@ Sumika (雅伽) means "elegant support"
 ## ⚙ Tech Stack
 
 **💻 Client:** React, MUI
+
 **🚀 Host:** Github
