@@ -1,5 +1,5 @@
 # 🌸 Sumika
-A project that constantly reminds me of ongoing assignments.
+A project that constantly reminds me of ongoing assignments & events.
 
 
 ## 🗾 Definition
