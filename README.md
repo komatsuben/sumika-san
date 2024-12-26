@@ -1,20 +1,8 @@
-# 🌸 Sumika
-A project that constantly reminds me of ongoing assignments & events.
+# React + Vite
 
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## 🗾 Definition
-Sumika (雅伽) means "elegant support"
+Currently, two official plugins are available:
 
-雅 = Elegant, 伽 = attendant
-## ✏ Authors
-
-- [@Benedict02](https://www.github.com/Benedict02)
-
-
-## ⚙ Tech Stack
-
-**💻 Client:** React, MUI
-
-**👩‍💻 Server:** Django
-
-**🚀 Host:** Vercel
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
