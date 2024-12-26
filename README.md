@@ -6,7 +6,7 @@ A project that constantly reminds me of ongoing assignments & events.
 
 Sumika (雅伽) means "elegant support"
 
-雅 = Elegant, 伽 = attendant
+雅 = Elegant, 伽 = attendant/helper
 
 ## ✏ Authors
 
