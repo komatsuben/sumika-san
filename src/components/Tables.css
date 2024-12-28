@@ -1,0 +1,19 @@
+.table__assignment {
+    width: 100%;
+}
+.table__color {
+    width: fit-content;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.table__container {
+    overflow-x: auto;
+}

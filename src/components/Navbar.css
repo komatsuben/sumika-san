@@ -9,5 +9,25 @@ nav {
 }
 .nav__link {
     margin: 0 1rem;
-    font-size: 1.2rem;
+    font-size: 1rem;
+    text-decoration: none;
+}
+.nav__logo {
+    display: flex;
+    width: 2.8rem;
+    justify-content: center;
+}
+
+@media (max-width: 640px) {
+    .nav__link {
+        font-size: 0.8rem;
+        margin: 0 0.5rem;
+    }
+    .nav__logo {
+        width: 2.5rem;
+    }
+}
+@media (max-width: 768px) {
+}
+@media (max-width: 1024px) {
 }
