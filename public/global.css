@@ -13,6 +13,9 @@
 .container {
     margin: 0 5vw;
 }
+.container div {
+    margin: 2vh 0;
+}
 
 @media (min-width: 640px) {
 }

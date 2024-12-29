@@ -1,11 +1,49 @@
 .table__assignment {
     width: 100%;
 }
+
 .table__color {
-    width: fit-content;
-    margin-top: 2vh;
-    margin-bottom: 2vh;
+    width: 100%;
 }
+
+/* Buttons */
+.table__addButton {
+    width: 100%;
+    padding: 0.15rem;
+}
+
+#toggleImageButton {
+    height: 3vh;
+}
+#toggleFieldButton {
+    height: 3vh;
+    width: 100%;
+}
+
+/* Responsive */
+@media (min-width: 640px) {
+    .table__color {
+        width: fit-content;
+    }
+    .table__addButton {
+        padding: 0.5rem;
+    }
+    #toggleImageButton {
+        height: 5vh;
+    }
+    #toggleFieldButton {
+        width: 8.15rem;
+    }
+}
+
+@media (min-width: 768px) {
+    #toggleFieldButton {
+        width: 8.2rem;
+    }
+}
+
+/* @media (min-width: 1024px) {
+} */
 
 table,
 th,

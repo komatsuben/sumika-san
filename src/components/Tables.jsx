@@ -5,11 +5,11 @@ export function ColorIdentificationCell({ color, text }) {
             <tr>
                 <td
                     style={{
-                        backgroundColor: { color },
+                        backgroundColor: `${ color }`,
                         color: "transparent",
                     }}
                 >
-                    _
+                    ___
                 </td>
                 <td>{text}</td>
             </tr>
