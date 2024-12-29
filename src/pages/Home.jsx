@@ -21,6 +21,8 @@ export default function Home() {
         setIsFieldVisible((prev) => !prev);
     };
 
+    const handleAddRow = () => {};
+
     return (
         <>
             <div className="container">
@@ -83,7 +85,10 @@ export default function Home() {
                             <tr>
                                 <td colSpan={2}>Add Row</td>
                                 <td colSpan={2}>
-                                    <button className="table__addButton">
+                                    <button
+                                        className="table__addButton"
+                                        onClick={handleAddRow}
+                                    >
                                         +
                                     </button>
                                 </td>
