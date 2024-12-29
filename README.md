@@ -8,7 +8,7 @@ Sumika (雅伽) means "elegant support"
 
 雅 = Elegant, 伽 = attendant/helper
 
-## ✏ Authors
+## ✏ Author
 
 -   [@Benedict02](https://www.github.com/Benedict02)
 
