@@ -3,29 +3,53 @@ import {
     AssigmentCell,
     ColorIdentificationCell,
 } from "../components/Tables.jsx";
-import { useRef, useState } from "react";
+import { useEffect, useState } from "react";
+import Form from "../components/Form.jsx";
 
 export default function Home() {
     const eisenhower = "./Eisenhower_Matrix.png";
     const [isImgVisible, setIsImgVisible] = useState(false);
     const [isFieldVisible, setIsFieldVisible] = useState(true);
+    const [isFormVisible, setIsFormVisible] = useState();
 
-    const imageRef = useRef(null);
-    const fieldRef = useRef(null);
+    const [todo, setTodo] = useState([]);
+    const [newTodo, setNewTodo] = useState({
+        title: "",
+        description: "",
+        deadline: "",
+        category: "",
+    });
+
+    // const [config, setConfig] = useState({
+    //     image_visible: isImgVisible,
+    //     field_visible: isFieldVisible,
+    // });
+
+    useEffect(() => {
+        const storedTodos = localStorage.getItem("todos");
+        if (storedTodos) {
+            setTodo(JSON.parse(storedTodos));
+        }
+    }, []);
+
+    useEffect(() => {
+        localStorage.setItem("todos", JSON.stringify(todo));
+    }, [todo]);
 
     const toggleImage = () => {
         setIsImgVisible((prev) => !prev);
     };
-
     const toggleField = () => {
         setIsFieldVisible((prev) => !prev);
     };
-
-    const handleAddRow = () => {};
+    const handleAddRow = () => {
+        setIsFormVisible((prev) => !prev);
+    };
 
     return (
         <>
-            <div className="container">
+            <Form />
+            <div className="container" style={isFormVisible? {filter: "blur(3px)"} : {}}>
                 <div
                     style={{
                         display: "flex",
@@ -37,12 +61,7 @@ export default function Home() {
                         Eisenhower Matrix
                     </button>
                     {isImgVisible && (
-                        <img
-                            src={eisenhower}
-                            width={"100%"}
-                            id="image"
-                            ref={imageRef}
-                        />
+                        <img src={eisenhower} width={"100%"} id="image" />
                     )}
                 </div>
                 <div>
@@ -50,7 +69,7 @@ export default function Home() {
                         Color Classification
                     </button>
                     {isFieldVisible && (
-                        <table className="table__color" ref={fieldRef}>
+                        <table className="table__color">
                             <tbody>
                                 <ColorIdentificationCell
                                     color="#ff0000"
@@ -79,9 +98,13 @@ export default function Home() {
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <AssigmentCell />
-                            </tr>
+                            {}
+                            <AssigmentCell
+                                title={``}
+                                description={``}
+                                deadline={``}
+                                categorys={``}
+                            />
                             <tr>
                                 <td colSpan={2}>Add Row</td>
                                 <td colSpan={2}>

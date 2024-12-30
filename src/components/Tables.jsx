@@ -5,7 +5,7 @@ export function ColorIdentificationCell({ color, text }) {
             <tr>
                 <td
                     style={{
-                        backgroundColor: `${ color }`,
+                        backgroundColor: `${color}`,
                         color: "transparent",
                     }}
                 >
@@ -17,13 +17,15 @@ export function ColorIdentificationCell({ color, text }) {
     );
 }
 
-export function AssigmentCell({ title, deadline, category }) {
+export function AssigmentCell({ title, description, deadline, category }) {
     return (
         <>
-            <th scope="row">Ca</th>
-            <td>Ca</td>
-            <td>Ca</td>
-            <td>Ca</td>
+            <tr>
+                <th scope="row">{title}</th>
+                <td>{description}</td>
+                <td>{deadline}</td>
+                <td>{category}</td>
+            </tr>
         </>
     );
 }
