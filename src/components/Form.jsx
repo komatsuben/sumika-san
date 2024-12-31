@@ -21,12 +21,21 @@ export default function Form() {
                         }}
                         onClick={toggleIsFormVisible}
                     >
-                        <i class="ri-close-circle-line"></i>
+                        <i className="ri-close-circle-line"></i>
                     </button>
                 </div>
                 <div className="popup__content">
                     <form action="">
                         <input type="text" placeholder="Title" />
+                        <input type="text" placeholder="Description" />
+                        <input type="date" placeholder="Deadline" />
+                        <select name="category" id="category">
+                            <option value="">Do it now</option>
+                            <option value="">Delegate</option>
+                            <option value="">Decide</option>
+                            <option value="">Delete</option>
+                        </select>
+                        <button type="submit">Submit</button>
                     </form>
                 </div>
             </div>
