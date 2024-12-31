@@ -1,11 +1,14 @@
 import { useState } from "react";
 
 import Navbar from "./components/Navbar";
+import { VariableProvider } from "./components/VariableProvider";
 
 function App() {
     return (
         <>
-            <Navbar />
+            <VariableProvider>
+                <Navbar />
+            </VariableProvider>
         </>
     );
 }

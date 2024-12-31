@@ -3,15 +3,16 @@ import {
     AssigmentCell,
     ColorIdentificationCell,
 } from "../components/Tables.jsx";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Form from "../components/Form.jsx";
+import { VariableContext } from "../components/VariableContext.jsx";
 
 export default function Home() {
     const eisenhower = "./Eisenhower_Matrix.png";
     const [isImgVisible, setIsImgVisible] = useState(false);
     const [isFieldVisible, setIsFieldVisible] = useState(true);
-    const [isFormVisible, setIsFormVisible] = useState();
 
+    const { isFormVisible, toggleIsFormVisible } = useContext(VariableContext);
     const [todo, setTodo] = useState([]);
     const [newTodo, setNewTodo] = useState({
         title: "",
@@ -19,11 +20,6 @@ export default function Home() {
         deadline: "",
         category: "",
     });
-
-    // const [config, setConfig] = useState({
-    //     image_visible: isImgVisible,
-    //     field_visible: isFieldVisible,
-    // });
 
     useEffect(() => {
         const storedTodos = localStorage.getItem("todos");
@@ -42,14 +38,17 @@ export default function Home() {
     const toggleField = () => {
         setIsFieldVisible((prev) => !prev);
     };
-    const handleAddRow = () => {
-        setIsFormVisible((prev) => !prev);
-    };
+    // const handleAddRow = () => {
+    //     setIsFormVisible((prev) => !prev);
+    // };
 
     return (
         <>
-            <Form />
-            <div className="container" style={isFormVisible? {filter: "blur(3px)"} : {}}>
+            {isFormVisible && <Form />}
+            <div
+                className="container"
+                style={isFormVisible ? { filter: "blur(3px)" } : {}}
+            >
                 <div
                     style={{
                         display: "flex",
@@ -98,7 +97,6 @@ export default function Home() {
                             </tr>
                         </thead>
                         <tbody>
-                            {}
                             <AssigmentCell
                                 title={``}
                                 description={``}
@@ -110,7 +108,7 @@ export default function Home() {
                                 <td colSpan={2}>
                                     <button
                                         className="table__addButton"
-                                        onClick={handleAddRow}
+                                        onClick={toggleIsFormVisible}
                                     >
                                         +
                                     </button>
