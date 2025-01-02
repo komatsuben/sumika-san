@@ -1,4 +1,6 @@
 import "./Tables.css";
+import { Link } from "react-router-dom";
+
 export function ColorIdentificationCell({ color, text }) {
     return (
         <>
@@ -17,14 +19,28 @@ export function ColorIdentificationCell({ color, text }) {
     );
 }
 
-export function AssigmentCell({ title, description, deadline, category }) {
+export function AssignmentCell({
+    title,
+    description,
+    deadline,
+    category,
+    link,
+}) {
     return (
         <>
             <tr>
-                <th scope="row">{title}</th>
-                <td>{description}</td>
-                <td>{deadline}</td>
-                <td>{category}</td>
+                <th scope="row">
+                    <Link to={`./${link}`}>{title}</Link>
+                </th>
+                <td>
+                    <Link to={`./${link}`}>{description}</Link>
+                </td>
+                <td>
+                    <Link to={`./${link}`}>{deadline}</Link>
+                </td>
+                <td>
+                    <Link to={`./${link}`}>{category}</Link>
+                </td>
             </tr>
         </>
     );

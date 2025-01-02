@@ -1,36 +1,19 @@
 import "./Home.css";
 import {
-    AssigmentCell,
+    AssignmentCell,
     ColorIdentificationCell,
 } from "../components/Tables.jsx";
 import { useContext, useEffect, useState } from "react";
 import Form from "../components/Form.jsx";
+import { useSearchParams } from "react-router-dom";
 import { VariableContext } from "../components/VariableContext.jsx";
 
 export default function Home() {
     const eisenhower = "./Eisenhower_Matrix.png";
     const [isImgVisible, setIsImgVisible] = useState(false);
     const [isFieldVisible, setIsFieldVisible] = useState(true);
-
+    const [queryParameter] = useSearchParams();
     const { isFormVisible, toggleIsFormVisible } = useContext(VariableContext);
-    const [todo, setTodo] = useState([]);
-    const [newTodo, setNewTodo] = useState({
-        title: "",
-        description: "",
-        deadline: "",
-        category: "",
-    });
-
-    useEffect(() => {
-        const storedTodos = localStorage.getItem("todos");
-        if (storedTodos) {
-            setTodo(JSON.parse(storedTodos));
-        }
-    }, []);
-
-    useEffect(() => {
-        localStorage.setItem("todos", JSON.stringify(todo));
-    }, [todo]);
 
     const toggleImage = () => {
         setIsImgVisible((prev) => !prev);
@@ -38,9 +21,12 @@ export default function Home() {
     const toggleField = () => {
         setIsFieldVisible((prev) => !prev);
     };
-    // const handleAddRow = () => {
-    //     setIsFormVisible((prev) => !prev);
-    // };
+
+    if (localStorage.getItem("todos") == null) {
+        localStorage.setItem("todos", "[]");
+    }
+
+    const todos = JSON.parse(localStorage.getItem("todos"));
 
     return (
         <>
@@ -97,12 +83,16 @@ export default function Home() {
                             </tr>
                         </thead>
                         <tbody>
-                            <AssigmentCell
-                                title={``}
-                                description={``}
-                                deadline={``}
-                                categorys={``}
-                            />
+                            {todos.map((todo, index) => (
+                                <AssignmentCell
+                                    key={index}
+                                    title={todo.title}
+                                    description={todo.description}
+                                    deadline={todo.deadline}
+                                    category={todo.category}
+                                    link={todo.id}
+                                />
+                            ))}
                             <tr>
                                 <td colSpan={2}>Add Row</td>
                                 <td colSpan={2}>
