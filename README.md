@@ -1,16 +1,18 @@
 # 🌸 Sumika-san
 
 A project that constantly reminds me of ongoing assignments & events.
+Not to be confused with [Sumika](https://github.com/komatsuben/sumika)
 
 ## 🗾 Definition
 
 Sumika (雅伽) means "elegant support"
+-san is just a honorific: in order to differentiate the project names
 
 雅 = Elegant, 伽 = attendant/helper
 
 ## ✏ Author
 
--   [@Benedict02](https://www.github.com/Benedict02)
+-   [@komatsuben](https://www.github.com/komatsuben)
 
 ## ⚙ Tech Stack
 
