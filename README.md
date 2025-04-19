@@ -1,4 +1,4 @@
-# 🌸 Sumika
+# 🌸 Sumika-san
 
 A project that constantly reminds me of ongoing assignments & events.
 
